@@ -22,9 +22,9 @@ class Console(wx.Frame):
         self.console_sizer.Add(self.clear_button, pos= (4,1))
         
         
-        self.Add_Text("hello World")
-        self.Add_Text("Line 2")
-        self.Add_Text("Line 2")
+        #self.Add_Text("hello World")
+        #self.Add_Text("Line 2")
+        #self.Add_Text("Line 2")
         
         self.output_button.Bind(wx.EVT_BUTTON, self.Output_Button)
         self.clear_button.Bind(wx.EVT_BUTTON, self.Clear_Button)
@@ -35,7 +35,7 @@ class Console(wx.Frame):
     
     def Output_Button(self, *args):
         self.Add_Text("Hello World")
-        print("Hello World")
+        #print("Hello World")
         
         
     def Add_Text(self, text:str):
@@ -48,8 +48,8 @@ class TextDisplay(wx.Panel):
     def __init__(self, parent, *args, **kwargs):
         super(TextDisplay, self).__init__(parent, *args, **kwargs)
         self.text_output = []
-        self.SetMaxSize(wx.Size(600,400))
-        self.SetMinSize(wx.Size(600,400))
+        self.SetMaxSize(wx.Size(700,400))
+        self.SetMinSize(wx.Size(700,400))
         self.SetBackgroundColour(wx.BLACK)
         self.sizer = wx.BoxSizer(wx.VERTICAL)
         self.sizer.AddStretchSpacer(1)

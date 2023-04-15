@@ -8,7 +8,7 @@ class MyButton(wx.Button):
         self.Bind(wx.EVT_PAINT, self.on_paint)
         
     def on_paint(self, event):
-        print("On Paint")
+        #print("On Paint")
         dc = wx.BufferedPaintDC(self)
         gc = wx.GraphicsContext.Create(dc)
         

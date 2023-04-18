@@ -1,10 +1,14 @@
 import wx
 
 class MyButton(wx.Button):
-    def __init__(self, parent, label:str):
-        super(MyButton, self).__init__(parent, label=label, style=wx.BORDER_NONE)
+    def __init__(self, parent, label:str, *args, **kwargs):
+        super(MyButton, self).__init__(parent, style=wx.BORDER_NONE, *args, **kwargs)
         self.BackgroundColour = wx.Colour(100,100,100)
         self.ForegroundColour = wx.Colour(120,120,120)
+        self.text = wx.StaticText(self, label=label)
+        self.text.Center(wx.BOTH)
+        self.text.SetForegroundColour(wx.BLUE)
+        self.text.SetBackgroundColour(wx.BLACK)
         self.Bind(wx.EVT_PAINT, self.on_paint)
         
     def on_paint(self, event):
